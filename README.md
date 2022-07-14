@@ -1,3 +1,13 @@
+# uibiulder Template: svelte-uibuilder
+
+This is a very simple template for using the [Svelte](https://svelte.dev/) front-end framework with uibuilder and Node-RED. It was adapted from the [Svelte Basic](https://github.com/TotallyInformation/node-red-contrib-uibuilder/tree/v6.0.0/templates/svelte-basic) template--keeping its functionality but using the latest versions and methodologies.
+
+For instructions, check out [Svelte Basic's readme](https://github.com/TotallyInformation/node-red-contrib-uibuilder/tree/v6.0.0/templates/svelte-basic#readme) (it is somewhat different as to specific file/folder descriptions, but overall usage is still the same), and especially [uibuilders' svelte docs](https://totallyinformation.github.io/node-red-contrib-uibuilder/#/svelte).
+
+Note: In the latest recommended `svelte` "getting started" strategy (which uses [this repo](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-svelte)), Rollup is replaced by Vite.  Vite's fancier dev mode doesn't rewrite changed files when it updates, which works fine when you connect directly to its dev server, but for connecting through the Node-RED/uibuilder server this means its files aren't updated. So, we switched to Vite's `build --watch` mode upon `npm run dev`, which does update the files, but unfortunately it doesn't trigger a browser reload after the update. This may be because Vite has separate modes for `development` and `build`, and apparently `build --watch` does something different from Rollup's browser refresh strategy (which is handled by `rollup-plugin-livereload`).
+
+So, unfortunately you have to reload the browser manually after changes.
+
 # Svelte + TS + Vite
 
 This template should help get you started developing with Svelte and TypeScript in Vite.

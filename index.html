@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Svelte + TS</title>
+    <title>Vite + Svelte + uibuilder</title>    
+    <!-- uib-styles.css is available for us under uibuilder at runtime; we don't need it, but here's how we could use it.
+      <link rel="stylesheet" href="./uib-styles.css"> 
+    -->
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+
+    <!-- #region Supporting Scripts. These MUST be in the right order. Note no leading / -->
+    <script src="../uibuilder/vendor/socket.io/socket.io.js">/* REQUIRED: Socket.IO is loaded only once for all instances, and is required by uibuilderfe.min.js. Without this, you don't get a websocket connection */</script>
+    <!-- /* NOTE: not using uibuilderfe.min.js as provided under uibuilder because it is required by App.svelte at build time, so App.svelte imports it instead. */
+    <script src="./uibuilderfe.min.js">/* REQUIRED: remove 'min.' to use dev version */</script>
+    -->
+    <!-- #endregion -->
+
+    
   </body>
 </html>
